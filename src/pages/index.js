@@ -20,7 +20,7 @@ export default function Index( history ) {
             setLeads(response.data);
         }
         loadLeads();
-    });
+    },[api]);
     
     return(
         <div className="index-container">

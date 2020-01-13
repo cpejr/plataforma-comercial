@@ -20,7 +20,7 @@ export default function Main( history ) {
             setLeads(response.data);
         }
         loadLeads();
-    }); 
+    },[api]); 
     
     return(
         <div className="main-container">
