@@ -5,3 +5,24 @@
     align-items: center;
     font-size: 50px;
 }
+
+/* <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCHEvDCe2MaOr8GB4YbEq3l7dWzA5Nvkkk",
+    authDomain: "plataforma-comercial-f9576.firebaseapp.com",
+    databaseURL: "https://plataforma-comercial-f9576.firebaseio.com",
+    projectId: "plataforma-comercial-f9576",
+    storageBucket: "plataforma-comercial-f9576.appspot.com",
+    messagingSenderId: "774261367228",
+    appId: "1:774261367228:web:b574b1ddae31914d72cbb9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script> */
