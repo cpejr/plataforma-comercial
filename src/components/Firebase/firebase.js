@@ -6,7 +6,7 @@ console.log(process.env.MONGO_USER);
 console.log(process.env.FIREBASE_API_KEY);
 console.log(process.env.REACT_APP_API_URL);
 
-const app = firebase.initializeApp({
+const appFirebase = firebase.initializeApp({
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     databaseURL: process.env.FIREBASE_DATABASE_URL,
@@ -15,4 +15,4 @@ const app = firebase.initializeApp({
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
   });
 
-  export default app;
+  export default appFirebase;

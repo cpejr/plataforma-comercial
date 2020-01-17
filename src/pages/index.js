@@ -8,6 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import StarIcon from '@material-ui/icons/Star';
+import appFirebase from '../components/Firebase/firebase.js'
 
 
 export default function Index( history ) {
@@ -29,6 +30,7 @@ export default function Index( history ) {
                     <Link value="new-tab" to="/new" className="index-link"><Tab value="new-tab" label="Cadastro de lead" className="NavTabs" /></Link>
                     <Link value="leads-tab" to="/leads" className="index-link"><Tab value="leads-tab" label="Lista de leads" className="NavTabs" /></Link>
                     <Link value="main-tab" to="/main" className="index-link"><Tab value="main-tab" label="Leads novos" className="NavTabs" /></Link>
+                    <a className="sign-out-button" onClick={() => appFirebase.auth().signOut()}>Sign Out</a>
                 </Tabs>
             </AppBar>
             <h1>Lista de Leads</h1>

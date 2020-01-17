@@ -1,13 +1,13 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import app from '../components/Firebase/firebase.js'
+import appFirebase from '../components/Firebase/firebase.js'
 
 const SignUp = ({ history }) => {
   const handleSignUp = useCallback(async event => {
     event.preventDefault();
     const { email, password } = event.target.elements;
     try {
-      await app
+      await appFirebase
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
       history.push("/");

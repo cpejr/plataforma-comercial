@@ -1,19 +1,21 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
+import './login.css';
 import { AuthContext } from "./auth";
-import app from '../components/Firebase/firebase.js'
+import appFirebase from '../components/Firebase/firebase.js'
 require('firebase/auth')
 
 
 const Login = ({ history }) => {
+  const email="webmaster@cpejr.com.br"
   const handleLogin = useCallback(
     async event => {
       event.preventDefault();
-      const { email, password } = event.target.elements;
+      const { password } = event.target.elements;
       try {
-        await app
+        await appFirebase
           .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
+          .signInWithEmailAndPassword(email, password.value);
         history.push("/main");
       } catch (error) {
         alert(error);
@@ -29,18 +31,10 @@ const Login = ({ history }) => {
   }
 
   return (
-    <div>
-      <h1>Log in</h1>
+    <div className="login-container">
       <form onSubmit={handleLogin}>
-        <label>
-          Email
-          <input name="email" type="email" placeholder="Email" />
-        </label>
-        <label>
-          Password
-          <input name="password" type="password" placeholder="Password" />
-        </label>
-        <button type="submit">Log in</button>
+        <input name="password" type="password" placeholder="Insira a senha" />
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );

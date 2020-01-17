@@ -8,7 +8,7 @@ import StarIcon from '@material-ui/icons/Star';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import app from '../components/Firebase/firebase.js'
+import appFirebase from '../components/Firebase/firebase.js'
 
 
 export default function Main( history ) {
@@ -30,7 +30,7 @@ export default function Main( history ) {
                     <Link value="new-tab" to="/new" className="main-link"><Tab value="new-tab" label="Cadastro de lead" className="NavTabs" /></Link>
                     <Link value="leads-tab" to="/leads" className="main-link"><Tab value="leads-tab" label="Lista de leads" className="NavTabs" /></Link>
                     <Link value="main-tab" to="/main" className="main-link"><Tab value="main-tab" label="Leads novos" className="NavTabs" /></Link>
-                    <button onClick={() => app.auth().signOut()}>Sign Out</button>
+                    <a className="sign-out-button" onClick={() => appFirebase.auth().signOut()}>Sign Out</a>
                 </Tabs>
             </AppBar>
             <h1>Leads saindo do forno</h1>
