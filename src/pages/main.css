@@ -81,6 +81,7 @@
     line-height: 20px;
     color: #999;
     margin-top: 5px;
+    word-wrap: break-word;
 }
 
 .main-container ul li .buttons {

@@ -4,16 +4,21 @@ import Form from './pages/form';
 import Main from './pages/main';
 import Edit from './pages/edit';
 import Index from './pages/index';
-import Auth from './pages/auth';
+import Login from './pages/login';
+import { AuthProvider } from './pages/auth';
+import PrivateRoute from './services/privateRoute'
 
 export default function Routes(){
     return(
-        <BrowserRouter>
-            <Route path="/" exact component={ Auth } />
-            <Route path="/new" component={ Form } />
-            <Route path="/main" component={ Main } /> 
-            <Route path="/leads" component={ Index } />
-            <Route path={"/edit/:id"} component={ Edit } /> 
-        </BrowserRouter>
+        <AuthProvider>
+            <BrowserRouter>
+                <Route path="/" exact component={ Login } />
+                {/* <Route path="/signUp" exact component={ SignUp } /> */}
+                <PrivateRoute path="/new" component={ Form } />
+                <PrivateRoute path="/main" component={ Main } /> 
+                <PrivateRoute path="/leads" component={ Index } />
+                <PrivateRoute path={"/edit/:id"} component={ Edit } /> 
+            </BrowserRouter>
+        </AuthProvider>
     );
 }
