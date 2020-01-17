@@ -4,6 +4,7 @@ import api from '../services/api';
 import logo from './logo.png';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
+import appFirebase from '../components/Firebase/firebase.js'
 import Tab from '@material-ui/core/Tab';
 import { Link } from 'react-router-dom';
 
@@ -64,6 +65,7 @@ export default function Form({ history }) {
                     <Link value="new-tab" to="/new" className="main-link"><Tab value="new-tab" label="Cadastro de lead" className="NavTabs" /></Link>
                     <Link value="leads-tab" to="/leads" className="main-link"><Tab value="leads-tab" label="Lista de leads" className="NavTabs" /></Link>
                     <Link value="main-tab" to="/main" className="main-link"><Tab value="main-tab" label="Leads novos" className="NavTabs" /></Link>
+                    <a className="sign-out-button" onClick={() => appFirebase.auth().signOut()}>Sign Out</a>
                 </Tabs>
             </AppBar>
             <h1>Cadastro de Leads/Clientes</h1>

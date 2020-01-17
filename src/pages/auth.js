@@ -1,47 +1,23 @@
-import React, { useState } from 'react';
-import './auth.css';
-import api from '../services/api';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import appFirebase from '../components/Firebase/firebase.js'
+require('firebase/auth')
 
-export default function Auth( { history } ) {
+export const AuthContext = React.createContext();
 
-    const [password, setPassword] = useState();
+export const AuthProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
 
-    // function handleInputChange(event) {
-    //     event.persist();
-    //     setPassword(
-    //         event.target.name = event.target.value;
-    //     )
-    // }
-    
-    async function handleSubmit(event){
-        try {
-            event.preventDefault();
-            if (password === "cpejr123"){
-                history.push(`/main`);
-            }
-            else{
-                history.push(`/`);
-            }
-        }
-        catch(error){
-            console.log('erro ao carregar a proxima pagina');
-            console.log(error)
-        }
-    }
+  useEffect(() => {
+    appFirebase.auth().onAuthStateChanged(setCurrentUser);
+  }, []);
 
-    return(
-        <div className="auth-container">
-            <form onSubmit={ handleSubmit }>
-                <input 
-                type="password"
-                name="password"
-                value= { password }
-                onChange = {e => setPassword(e.target.value)}
-                />
-                <button type="submit">Enviar</button>
-            </form>
-            {/* <Link to="/new" className="main-link">oi</Link> */}
-        </div>
-    );
-}
+  return (
+    <AuthContext.Provider
+      value={{
+        currentUser
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

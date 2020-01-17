@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Routes from './routes.js';
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 
 function App() {
