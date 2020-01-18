@@ -19,7 +19,9 @@ export default function Edit( { match, history } ) {
     const status = [
         { id: 1, name: 'Não iniciado' },
         { id: 2, name: 'Retornar' },
-        { id: 3, name: 'Em progresso' },
+        { id: 3, name: 'Contato inicial' },
+        { id: 3, name: 'Elaboração de escopo' },
+        { id: 3, name: 'Proposta Aceita' },
         { id: 4, name: 'Assinado' },
         { id: 5, name: 'Cancelado' },
     ];

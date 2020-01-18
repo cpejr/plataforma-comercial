@@ -11,7 +11,7 @@ import StarIcon from '@material-ui/icons/Star';
 import appFirebase from '../components/Firebase/firebase.js'
 
 
-export default function Index( history ) {
+export default function Index() {
     const [leads, setLeads] = useState([]);
 
     useEffect(() => {
@@ -44,7 +44,11 @@ export default function Index( history ) {
                             { (lead.returnDate != null) 
                                     ? <p className="status-badge">{moment(lead.returnDate).calendar()}</p>
                                     : ''
-                                }
+                            }
+                            { (lead.responsible != null) 
+                                    ? <p className="status-badge">{lead.responsible}</p>
+                                    : ''
+                            }
                             <p>{lead.details}</p>
                         </footer>
                         <div className="buttons">

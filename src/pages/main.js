@@ -44,7 +44,11 @@ export default function Main( history ) {
                             { (lead.returnDate != null) 
                                     ? <p className="status-badge">{moment(lead.returnDate).calendar()}</p>
                                     : ''
-                                }
+                            }
+                            { (lead.responsible != null) 
+                                    ? <p className="status-badge">{lead.responsible}</p>
+                                    : ''
+                            }
                             <p>{lead.details}</p>
                         </footer>
                         <div className="buttons">
