@@ -111,6 +111,7 @@
     margin-left: 10px;
     padding: 3px 5px 3px 5px;
     color: #fff !important;
+    word-wrap: break-word;
 }
 
 .index-link {
